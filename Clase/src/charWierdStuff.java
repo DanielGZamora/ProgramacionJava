@@ -1,5 +1,5 @@
 
-public class charWierdshit {
+public class charWierdStuff {
 
 	public static void main(String[] args) {
 		char VarH= 'H',VarO= 'O',VarL= 'L',VarA='A';
