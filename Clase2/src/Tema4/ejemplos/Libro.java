@@ -1,7 +1,10 @@
 package Tema4.ejemplos;
 
 public class Libro {
-	enum Genero {MISTERIO, TERROR, DRAMA, HUMOR};
+	enum Genero {
+		MISTERIO, TERROR, DRAMA, HUMOR
+	};
+
 	private String titulo;
 	private String autor;
 	private int numeroPaginas;
@@ -73,15 +76,13 @@ public class Libro {
 		return "Libro [titulo=" + titulo + ", autor=" + autor + ", numeroPaginas=" + numeroPaginas + ", isbn=" + isbn
 				+ ", ejemplaresExistentes=" + ejemplaresExistentes + ", numeroEjemplares=" + numeroEjemplares + "]";
 	}
+
 	public void prestar() {
-		
+
 	}
+
 	public void devolver() {
-		
+
 	}
-	
-	
-	
-	
 
 }
