@@ -53,9 +53,19 @@ public class Jarra {
 		}
 		return resto;
 	}
+	public void traspasar(Jarra otra, int cantidad) {
+		if(cantidad>=contenido) {
+			otra.contenido +=cantidad;
+			this.contenido=0;
+		}else {
+			otra.contenido +=cantidad;
+			this.contenido -=cantidad;
+		}
+		
+	}
 	@Override
 	public String toString() {
-		return "Jarra [capacidad=" + capacidad + ", contenido=" + contenido + "]";
+		return "capacidad = " + capacidad + ", contenido = " + contenido;
 	}
 	
 	
