@@ -9,80 +9,51 @@ public class Libro {
 	private String autor;
 	private int numeroPaginas;
 	private String isbn;
-	private int ejemplaresExistentes;
-	private int numeroEjemplares;
+	private int ejemplaresDisponibles;
+	private int ejemplaresPrestados;
 
-	public Libro(String titulo, String autor, int numeroPaginas, String isbn, int ejemplaresExistentes,
-			int numeroEjemplares) {
+	public Libro(String titulo, String autor, int numeroPaginas, String isbn, int ejemplaresExistentes) {
 		super();
 		this.titulo = titulo;
 		this.autor = autor;
 		this.numeroPaginas = numeroPaginas;
 		this.isbn = isbn;
-		this.ejemplaresExistentes = ejemplaresExistentes;
-		this.numeroEjemplares = numeroEjemplares;
+		this.ejemplaresDisponibles = ejemplaresExistentes;
 	}
-
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
-	public String getAutor() {
-		return autor;
-	}
-
-	public void setAutor(String autor) {
-		this.autor = autor;
-	}
-
-	public int getNumeroPaginas() {
-		return numeroPaginas;
-	}
-
-	public void setNumeroPaginas(int numeroPaginas) {
-		this.numeroPaginas = numeroPaginas;
-	}
-
-	public String getIsbn() {
-		return isbn;
-	}
-
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-
+	//getters/setters
 	public int getEjemplaresExistentes() {
-		return ejemplaresExistentes;
+		return ejemplaresDisponibles;
 	}
 
-	public void setEjemplaresExistentes(int ejemplaresExistentes) {
-		this.ejemplaresExistentes = ejemplaresExistentes;
-	}
-
-	public int getNumeroEjemplares() {
-		return numeroEjemplares;
-	}
-
-	public void setNumeroEjemplares(int numeroEjemplares) {
-		this.numeroEjemplares = numeroEjemplares;
-	}
 
 	@Override
 	public String toString() {
 		return "Libro [titulo=" + titulo + ", autor=" + autor + ", numeroPaginas=" + numeroPaginas + ", isbn=" + isbn
-				+ ", ejemplaresExistentes=" + ejemplaresExistentes + ", numeroEjemplares=" + numeroEjemplares + "]";
+				+ ", ejemplaresExistentes=" + ejemplaresDisponibles + ", numeroEjemplares=" + ejemplaresPrestados + "]";
 	}
 
 	public void prestar() {
-
+		if (getEjemplaresExistentes() > 0) {
+			ejemplaresDisponibles--;
+			ejemplaresPrestados++;
+			System.out.printf("Se ha prestado un ejemplar de %s. Quedan %d ejemplares.\n",
+					titulo, getEjemplaresExistentes());
+		}
+		else {
+			System.out.println("ERROR: No quedan ejemplares de: " + titulo);
+		}
 	}
-
+	
 	public void devolver() {
-
+		if (ejemplaresPrestados > 0) {
+			ejemplaresDisponibles++;
+			ejemplaresPrestados--;
+			System.out.printf("Se ha devuelto un ejemplar de %s. Quedan %d ejemplares.\n",
+					titulo, getEjemplaresExistentes());
+		}
+		else {
+			System.out.println("ERROR: No quedan ejemplares por devolver de: " + titulo);
+		}
 	}
 
 }
