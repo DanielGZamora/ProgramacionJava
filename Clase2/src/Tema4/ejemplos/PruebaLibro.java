@@ -13,9 +13,5 @@ public class PruebaLibro {
 		l3.prestar();
 		l1.prestar();
 		
-		
-		
-		
-		
 	}
 }

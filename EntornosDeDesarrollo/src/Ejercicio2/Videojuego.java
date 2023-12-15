@@ -100,6 +100,26 @@ public class Videojuego {
 		else
 			return this;
 	}
+	/**
+	 * Verifica si el videojuego es reciente basándose en la fecha de lanzamiento
+	 * un juego reciente es considerado asi si fue lanzado en nuestra región
+	 * menos de 6 meses.
+	 * @return true si el videojuego es reciente, false si no lo es.
+	 */
+	public boolean esreciente() {
+		Date fechaActual = new Date();
+		long fechaActualC = fechaActual.getTime();
+		long fechaLanzamientoC = fechaActual.getTime();
+		long restoFecha = fechaActualC-fechaLanzamientoC;
+		long seisMesesMillis = 6*30*24*60*60*1000;
+		if(restoFecha>seisMesesMillis) {
+			return false;
+		}
+		else {
+			return true;
+		}
+		
+	}
 	
 	
 }
