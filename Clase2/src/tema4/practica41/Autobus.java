@@ -14,17 +14,73 @@ public class Autobus {
 		FechaHora = fechaHora;
 		this.asientos = asientos;
 	}
-	
+
+
 	@Override
 	public String toString() {
-		return "Autobus [matricula=" + matricula + ", ruta=" + ruta + ", FechaHora=" + FechaHora + ", asientos="
+		return " [matricula=" + getMatricula() + ", ruta=" + ruta + ", FechaHora=" + FechaHora + ", asientos="
 				+ asientos + ", asientosOcupados=" + asientosOcupados + "]";
 	}
 
 	public void reservarAsiento(int cantidad) {
-		asientosOcupados += cantidad;
-		cantidad -=asientos;
+		if(cantidad - asientos > 0) {
+			System.out.println("error, no puedes reservar tantos asientos");
+		} else {
+			asientosOcupados += cantidad;
+			asientos  -= cantidad;
+		}
+		
 	}
+	public void cancelarAsiento(int cantidad) {
+		if(asientosOcupados >0 && cantidad - asientosOcupados > 0) {
+			System.out.println("error, no puedes cancelar mas asientos");
+		}else {
+			asientosOcupados-= cantidad;
+			asientos  += cantidad;
+		}
+	}
+
+	public String getMatricula() {
+		return matricula;
+	}
+
+	public void setMatricula(String matricula) {
+		this.matricula = matricula;
+	}
+
+	public String getRuta() {
+		return ruta;
+	}
+
+	public void setRuta(String ruta) {
+		this.ruta = ruta;
+	}
+
+	public String getFechaHora() {
+		return FechaHora;
+	}
+
+	public void setFechaHora(String fechaHora) {
+		FechaHora = fechaHora;
+	}
+
+	public int getAsientos() {
+		return asientos;
+	}
+
+	public void setAsientos(int asientos) {
+		this.asientos = asientos;
+	}
+
+	public int getAsientosOcupados() {
+		return asientosOcupados;
+	}
+
+	public void setAsientosOcupados(int asientosOcupados) {
+		this.asientosOcupados = asientosOcupados;
+	}
+	
+	
 	
 	
 	
