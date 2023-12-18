@@ -1,6 +1,9 @@
 package ej.trabajoGrupo;
 
 import java.util.Random;
+/**
+ * @author Dani
+ */
 
 public class DanielGarcia {
 	/**
