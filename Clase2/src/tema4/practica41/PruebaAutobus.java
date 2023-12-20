@@ -1,6 +1,6 @@
 package tema4.practica41;
 
-public class Prueba {
+public class PruebaAutobus {
 	
 	public static void main(String[] args) {
 		
