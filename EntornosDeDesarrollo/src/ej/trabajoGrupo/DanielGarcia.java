@@ -15,8 +15,6 @@ public class DanielGarcia {
 	public int numeroRandom(int minimo,int maximo) {
 		Random random=new Random();
 		int nRandom = (int) (random.nextInt(maximo - minimo+1)+minimo);
-		
-		
 		return nRandom;
 	}
 	/*
